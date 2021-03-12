@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styleHangman.css">
+    <title>Hangman Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="game-info alert alert-primary">
+            <div class="game-name">Hangman</div>
+            <div class="timeDone">0</div>
+            <div class="category">
+                Word From <span></span>
+            </div>
+        </div>
+        <hr>
+        <div class="row ">
+                <div class="col hangman-draw">
+                    <div class="the-draw">
+                        <div class="the-stand"></div>
+                        <div class="the-hang"></div>
+                        <div class="the-rope"></div>
+                        <div class="the-man">
+                            <div class="head"></div>
+                            <div class="body"></div>
+                            <div class="hands"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            <hr>
+            <div class="letters"></div>
+        <div class="letter-guess"></div>
+          </div>
+          <!-- Star Footer -->
+      <Footer>
+          <div class="social">
+             <a href="https://www.facebook.com/HaiderAyadALnakash" target="_blank"><i class="fa fa-facebook"></i></a> 
+             <a href="https://www.youtube.com/channel/UCOhgtWZ40FR2neJpK5wAqdg?view_as=subscriber" target="_blank"><i class="fa fa-youtube"></i></a> 
+             <a href="https://t.me/HaiderAlnkash" target="_blank"><i class="fa fa-telegram"></i></a> 
+             <a href="https://haiderayadit@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a> 
+          </div>
+          <h6 class="text-footer">Design by &copy; Haider Alnkash</h6>
+      
+      </Footer>
+      <!-- End Footr  -->
+    </div>
+    <audio src="audio/fail.mp3" preload="auto" id="song"></audio>
+    <audio src="audio/success.mp3" preload="auto" id="success"></audio>
+    <audio src="audio/success.mp3" preload="auto" id="faild"></audio>
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/codeHangman.js"></script>
+</body>
+</html>
