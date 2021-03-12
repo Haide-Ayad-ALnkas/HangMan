@@ -1,7 +1,7 @@
 
-
+let goal=0;
 //  أ، ب، ت، ث، ج، ح، خ، د، ذ، ر، ز، س، ش، ص، ض، ط، ظ، ع، غ، ف، ق، ك، ل، م، ن، هـ، و، ي
-const letters="ابتثجحخدذرزسشصضطظعغفقكلمنهوي";
+const letters="ةابتثجحخدذرزسشصضطظعغفقكلمنهوي";
 let letterArray=Array.from(letters);
 let lettersSpan=document.querySelector(".letters");
 letterArray.forEach(letter=>{
@@ -16,8 +16,8 @@ letterArray.forEach(letter=>{
 // Object Of Words + categores
 
 const words={
-    programming:["بايثون"],
-    person:["مستر بن","جاكي شان","بروسلي","احمدالشقيري","شيرين"],
+    programming:["بايثون","اللغة العربيه"],
+    person:["مستر بن","جاكي شان","بروسلي","احمد الشقيري","شيرين"],
     country:["عراق","مصر","سعوديه","تركيا"]
 }
 let allKeys=Object.keys(words);
@@ -26,10 +26,10 @@ let randomPropName=allKeys[randomPropNumber];
 let randomPropValue=words[randomPropName];
 
 
-
 let randomValueNumber=Math.floor(Math.random()* randomPropValue.length);
 let randomVuleVule=randomPropValue[randomValueNumber];
 document.querySelector(".category span").innerHTML=randomPropName;
+console.log(randomVuleVule);
 
 // Select image for prievw
 let x=document.querySelector(".hangman-draw"); 
@@ -43,13 +43,14 @@ ArrayLetterGuess.forEach(letter=>{
     let letterSpan=document.createElement("span");
     if (letter === " ") {
         letterSpan.className="withSpace";
+        goal=+1;
     }
     leterGuess.appendChild(letterSpan);
 });
 
 //Tries
 let wrongtries=0;
-let goal=0;
+
 let theDraw=document.querySelector(".hangman-draw");
 
 let guessSpans=document.querySelectorAll(".letter-guess span");
@@ -61,13 +62,14 @@ document.addEventListener("click",(e)=>{
         if (e.target.className === 'box-letter') {
         e.target.classList.add("clicked")
         letterClick=e.target.innerHTML.toLowerCase();
-        theChoosenWord=Array.from(randomVuleVule.toLowerCase());
+        theChoosenWord=Array.from(randomVuleVule);
         theChoosenWord.forEach((wordletter,index)=>{
             if (letterClick === wordletter) {
                 theStatus=true;
                 guessSpans.forEach((wordspan,indexspan)=>{
                     if (indexspan === index) {
                         wordspan.innerHTML=wordletter;
+                        goal++;
                     }
                 })
             }
@@ -81,12 +83,13 @@ document.addEventListener("click",(e)=>{
                 endGame();
             }
         }else{
-            goal++; 
+           
         }
-       if (guessSpans.length===goal) {
+       if (guessSpans.length === goal) {
            succesGame();
        }
-
+       console.log(goal);
+       console.log(guessSpans.length);
     }
 });
 
