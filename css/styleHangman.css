@@ -195,7 +195,7 @@ hr{
     width: 50px;
     height: 50px;
     line-height:50px;
-    background-color:#2196f3;
+    background-color: rgba(0, 153, 255, 0.534);
     display: inline-block;
     margin-right: 10px;
     color: #FFF;
@@ -235,7 +235,7 @@ hr{
     font-size: 24px;
     text-transform: uppercase;
     font-weight: bold;
-    background-color: rgb(119 200 255 / 22%);
+    background-color: rgba(33 150 243 / 11%);
     border-bottom: 3px solid rgb(245, 26, 26);
     transition: all .3s;
 }
